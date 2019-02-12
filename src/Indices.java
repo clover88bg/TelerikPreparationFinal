@@ -1,6 +1,5 @@
-//Това не е окончателно решение, минава само някои тестове в Judge! 
-import java.uti1l.Scanner;
-
+//Това не е окончателно решение, минава само някои тестове в Judge!
+import java.util.Scanner;
 
 public class Indices {
     public static void main(String[] args) {
@@ -20,31 +19,31 @@ public class Indices {
         arrSecond[0] = arr[0];
         boolean cicle = false;
         int index = 0;
-        for (int j = 0; arr[j]< arr.length; j++) {
+        for (int j = 0; arr[j] < arr.length; j++) {
             index = arr[arr[j]];
             if (index < 0) break;
-            if (index > arr.length)break;
+            if (index > arr.length) break;
             for (int p = 0; p < arrSecond.length; p++) {
                 if (arrSecond[p] == index) {
                     cicle = true;
                     break;
                 }
             }
-            if (cicle){
+            if (cicle) {
                 sb.append("0");
                 break;
             }
             sb.append(index).append(" ");
-            arrSecond[j+1] = index;
+            arrSecond[j + 1] = index;
         }
 
         if (cicle) {
             String[] strArr = sb.toString().split(" ");
             for (int n = 0; n < strArr.length; n++) {
                 if (index == 0) index = 1;
-                if ((Integer.toString(arrSecond[index-1])).equals(strArr[n])) {
-                    System.arraycopy(strArr,n,strArr,n+1,strArr.length-n-1);
-                    strArr[n] = "(" ;
+                if ((Integer.toString(arrSecond[index - 1])).equals(strArr[n])) {
+                    System.arraycopy(strArr, n, strArr, n + 1, strArr.length - n - 1);
+                    strArr[n] = "(";
                     break;
                 }
             }
@@ -54,14 +53,14 @@ public class Indices {
                 stopPause = 0;
                 if (m.contentEquals("(")) {
                     s = "";
-                  stopPause = 1;
+                    stopPause = 1;
                 }
                 System.out.print(s + m);
-                if(stopPause == 1) s = "";
+                if (stopPause == 1) s = "";
                 else s = " ";
             }
             System.out.println(")");
-        }else
-        System.out.println(sb.toString());
+        } else
+            System.out.println(sb.toString());
     }
 }
