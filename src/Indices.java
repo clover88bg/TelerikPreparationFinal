@@ -1,5 +1,5 @@
-
-import java.util.Scanner;
+//Това не е окончателно решение, минава само някои тестове в Judge! 
+import java.uti1l.Scanner;
 
 
 public class Indices {
